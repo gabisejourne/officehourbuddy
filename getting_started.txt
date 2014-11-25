@@ -1,0 +1,10 @@
+huid website: 
+    manual.cs50.net >> cs50 ID
+git: github.com
+    create account online
+    git add .
+    git commmit -m 'My message'
+    git push
+    git pull
+    git checkout commit_name
+    git status
