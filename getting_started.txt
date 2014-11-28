@@ -8,3 +8,7 @@ git: github.com
     git pull
     git checkout commit_name
     git status
+    https://github.com/gabisejourne/Office-Hour-Buddy.git
+    
+    Changes
+    changed include_path in etc/php5/cgi/php.ini
