@@ -7,11 +7,22 @@
  * Global CSS.
  */
 
+
+body 
+{
+    background-color: white;
+}
+            
 .container
 {
-    /* center contents */
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
+}
+
+#top
+{
+    /* center contents */
     text-align: center;
 }
 
@@ -24,27 +35,94 @@
     width: auto;
 }
 
-/* center links in portfolio */ 
-ul
+#middle td
 {
-    display: inline-block;
-    margin-top: .1em;
-    margin-bottom: .1em;
-}
-
-/* table width in portfolio and history */
-table
-{
-    width:100%;
-}
-
-/* center cells of portfolio and history tables */
-td, th
-{
-    height: 50px;
-    vertical-align: bottom;
+    /* left-align tables' cells */
     text-align: left;
-    padding: 15px;    
+}
+
+#middle .nav
+{
+    /* center navigation pills */
+    display: inline-block;
+}
+
+
+/* http://code.tutsplus.com/tutorials/create-a-sticky-note-effect-in-5-easy-steps-with-css3-and-html5--net-13934 */
+#middle #postits
+{
+  font-family:arial,sans-serif;
+  font-size:100%;
+  margin:3em;
+  color:#fff;
+}
+
+#middle #postits h2,p
+{
+  font-size:100%;
+  font-weight:normal;
+}
+#middle #postits ul,li
+{
+  list-style:none;
+}
+
+#middle #postits ul
+{
+  overflow:hidden;
+  padding:3em;
+}
+
+#middle #postits ul li a
+{
+  text-decoration:none;
+  color:#000;
+  display:block;
+  height:10em;
+  width:10em;
+  padding:1em;
+  /* Safari+Chrome */
+  -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+}
+
+#middle #postits ul li:nth-child(even) a
+{
+    -webkit-transform:rotate(4deg);
+    position:relative;
+    top:5px;
+    background:#cfc;
+}
+#middle #postits ul li:nth-child(3n) a
+{
+    -webkit-transform:rotate(-3deg);
+    position:relative;
+    top:-5px;
+    background:#ffc;
+}
+#middle #postits ul li:nth-child(5n) a
+{
+    -webkit-transform:rotate(5deg);
+    position:relative;
+    top:-10px;
+    background:#ccf;
+}
+
+#middle #postits ul li
+{
+  margin:1em;
+  float:left;
+}
+
+#middle #postits ul li h2
+{
+  font-size:140%;
+  font-weight:bold;
+  padding-bottom:10px;
+}
+#middle #postits ul li p
+{
+  font-family:"Reenie Beanie",arial,sans-serif;
+  font-size:180%;
 }
 
 #bottom
@@ -55,3 +133,5 @@ td, th
     /* surround with whitespace */
     margin: 20px;
 }
+
+

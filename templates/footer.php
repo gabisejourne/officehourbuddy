@@ -1,7 +1,7 @@
             </div>
 
             <div id="bottom">
-                Copyright &#169; John Harvard
+                Copyright &#169; GCR Productions
             </div>
 
         </div>

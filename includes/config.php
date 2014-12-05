@@ -3,6 +3,10 @@
     ini_set("display_errors", true);
     error_reporting(E_ALL);
     
+    // requirements
+    require("constants.php");
+    require("functions.php");
+    
     // URL that CS50 ID should ask users to trust; must be a prefix of RETURN_TO and
     // must be registered with CS50, per https://manual.cs50.net/ID
     define("TRUST_ROOT", "http://officehourbuddy/");
