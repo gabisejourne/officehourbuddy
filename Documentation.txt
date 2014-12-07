@@ -51,7 +51,7 @@ Then save the file and quit.
 Head over to http://officehourbuddy/phpmyadmin using Chrome inside of the appliance. Log in as John Harvard if prompted (with 
 username of jharvard and a password of crimson). 
 
-Open officehourbuddy.sql which is contained within the hudsbook folder. Highlight it all, copy, then return to phpMyAdmin.
+Open officehourbuddy.sql which is contained within the officehourbuddy folder. Highlight it all, copy, then return to phpMyAdmin.
 Click phpMyAdmin's SQL tab, and paste everything you copied into that page's big text box and click Go. A greenish 
 banner will appear indicating success. You should now see the link to a database called officehourbuddy in phpMyAdmin's top-left 
 corner.
