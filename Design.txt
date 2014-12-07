@@ -1,0 +1,61 @@
+ Being such a large website, we felt it would be practical to take you through the design of Office Hour Buddy page by page
+    in order to give you a view "under the hood."
+    
+    After visting http://officehourbuddy/ you'll encounter a page with a log in button. After clicking on the button,
+    the website will call upon cs50 id (given by cs50 staff) and take you to a standard harvard login page.
+    Once there, we chose to allow the user to login using either their:
+ 
+    1) student id number and password,
+    2) @college email address and password
+    3) @fas email address and password.
+    
+    *NOTE* If you choose to login with an email address, the website will redirect you to a page where you will input your first and last
+    name so it can be added to the database. (This may or may not work, but we requested cs50 to allow us to login by email, but we're not
+    sure if it works. That's on you cs50;)) *NOTE*
+    
+    After logging in the program will display student_faculty.html which contains two buttons, Faculty and Student,
+    but only if you've never logged in before.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    
+    If you press Faculty, the website will call upon faculty.php which takes you to a template called hours.php. This form displays
+    a page that allows the faculty member to input their name, class title, day, start time, end time, and location. Once all the
+    information is submitted and the user clicks submit, faculty.php adds all of the information to a mySQL database called faculty
+    and renders a page that summarizes the information provided.
+    
+    The page also contains links to log out, doubly-register as a faculty member (as in the case of some student-TF's), delete or edit
+    hours.
+    
+    If you choose to edit your hours, then the website will again call upon hours.php for user input. If the user inputs office hours
+    on a different day, then an entirely new entry will be added to the mySQL database, but if the user inputs office hours on a
+    preexisiting day,then hours.php will update the mySQL entry for that day with new times.
+    
+    If you want to delete hours, then simply click delete and your information will be removed form the mySQL database.
+    
+    After doing either of those things, the website will render the page that summarizes your office hour info and contains the
+    aforementioned links.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    If you press Student at the buttons page, the website will call upon student.php which will render the student homepage, portfolio.php, which simply
+    displays your professors' and TF's existing office hours in a sleek, refined sticky note design, and if they have none, calls upon
+    search.php, which allows the user to search for their faculty member and subsequently add the faculty members info as a sticky note.
+    
+    Rather than display the faculty member's information for the user and then add it to his/her portfolio page, we chose to directly
+    add a sticky note to portfolio.php simply because it was easier to implement and more user-friendly.
+    
+    Portfolio.php also contains links to doubly-register as a faculty member (as in the case of some student-TF's), search for other
+    faculty, and logout.
+    
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    If you have already logged in before, then the website will skip student_faculty.html and take you to the appropriate faculty
+    or student page. Henceforth, the website will operate as mentioned in the above two paragraphs depending on whether or not you're
+    registered as a student or faculty member. 
+    
+    *NOTE* If you do become doubly registered as a faculty member, then you'll be able to view your office hours via the "View Office
+    Hours" which renders the same page via hours.php. *NOTE*
+    
+ -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    
+    Well that's all for design!! I hoped you enjoyed taking a detailed look "under the hood" of Office Hour Buddy!
+    

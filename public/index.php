@@ -28,25 +28,25 @@
                 {
                     apologize("Can't find your portfolio.");
                 }
-
-
-                // add saved faculty members to portfolio
+                
+                // assemble faculty office hours for insertion to portfolio
                 $positions = [];
                 foreach ($rows as $row)
                 {
-                    $faculty = query("SELECT * FROM faculty WHERE fullname = ? AND course = ?", $row["faculty"], $row["course"]);
                     $positions[] = [
-                        "faculty" => $faculty[0]["fullname"],
-                        "course" => $faculty[0]["course"],
-                        "day" => $faculty[0]["day"],
-                        "start" => $faculty[0]["start"],
-                        "end" => $faculty[0]["end"]
+                        "faculty" => $row["faculty"],
+                        "course" => $row["course"],
+                        "day" => $row["day"],
+                        "start" => $row["start"],
+                        "end" => $row["end"]
                     ];
                 }
-
+                
                 // render portfolio
-                render("portfolio.php", ["positions" => $positions, "title" => "Portfolio"]);
-             
+                $students = query("SELECT * FROM students WHERE identity = ?", $_SESSION["user"]["identity"]);
+                $faculty = query("SELECT * FROM faculty WHERE fullname = ?", $_SESSION["user"]["fullname"]);
+                render("portfolio.php", ["positions" => $positions, "faculty" => $faculty, "students" => $students, "title" => "Portfolio"]);
+    
             }
 
             
@@ -54,7 +54,9 @@
             {
                 // look up faculty member
                 $faculty = query("SELECT * FROM faculty WHERE fullname = ?", $_SESSION["user"]["fullname"]);
-                render("hours.php", ["faculty" => $faculty[0], "title" => "Your Hours"]);
+
+                $students = query("SELECT * FROM students WHERE identity = ?", $_SESSION["user"]["identity"]);
+                render("hours.php", ["faculty" => $faculty, "students" => $students, "title" => "Your Hours"]);
             }
           
         }

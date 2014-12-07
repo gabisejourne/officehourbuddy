@@ -4,7 +4,7 @@
     <strong>
     <li><?= htmlspecialchars($faculty["start"]) ?></li> to <li><?= htmlspecialchars($faculty["end"]) ?></li>
     </strong>
-
+</ul>
 <form action="add.php" method="post">
     <fieldset>
         <div class="form-group">

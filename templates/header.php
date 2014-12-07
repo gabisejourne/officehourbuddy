@@ -20,11 +20,9 @@
         <script src="/js/scripts.js"></script>
 
     </head>
-
     <body>
-
         <div class="container">
-
+        
             <div id="top">
                 <a href="/"><img alt="Office Hour Buddy" src="/img/logo.png"/></a>
             </div>

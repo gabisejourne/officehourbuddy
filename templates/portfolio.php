@@ -4,7 +4,7 @@
 <ul>
 
         <?php 
-    
+
             foreach ($positions as $position)
             {
                 printf("<li><a href='#'>");
@@ -24,11 +24,22 @@
         <a href="logout.php"><strong>Log Out</strong></a>
     </li>
 </ul>
+
 <ul class="nav nav-pills">
     <li>
-        <a href="faculty.php"><strong>Register as Faculty Member</strong></a>
+        <?php
+            if($faculty == false)
+            {
+                printf("<a href=%s><strong>%s</strong></a>", htmlspecialchars("faculty.php"), "Register as a Faculty Member");
+            }
+            else if($faculty != false && $students != false)
+            {
+                printf("<a href=%s><strong>%s</strong></a>", htmlspecialchars("view_hours.php"), "View your hours");
+            }
+        ?>
     </li>
 </ul>
+        
 <ul class="nav nav-pills">
     <li>
         <a href="search.php"><strong>Search for TF</strong></a>

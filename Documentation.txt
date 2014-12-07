@@ -1,0 +1,115 @@
+Hello User. Welcome to the user manual of officehourbuddy!!!
+
+Ever agonized over the lack of a centralized database of faculty office hours? Well agonize no more!
+
+Office Hour Buddy is a website that allows students to search for their professors and TF's and displays them in a simple sticky note
+design. It also allows faculty members to input and update their office hours into the database.
+
+Before getting started, we'll have to go through some standard protocol to allow the website to work:
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+Start up your appliance and, upon reaching John Harvard’s desktop, open a terminal window and execute
+    update50
+to ensure that your appliance is up-to-date!
+
+Unzip officehourbuddy.zip
+
+Move this new folder (officehourbuddy) from your downloads to your vhosts folder
+    
+Execute in your terminal window
+    cd officehourbuddy
+
+Followed by
+    ls
+
+You should see that officehourbuddy contains four subdirectories: cs50-id, includes, public, and templates. This also contains the 
+documentation.txt, design.txt, and the officehourbuddy.sql. 
+
+Next, ensure a few directories are world-executable by executing
+    chmod a+x ~
+    chmod a+x ~/vhosts
+    chmod a+x ~/vhosts/
+    chmod a+x ~/vhosts/officehourbuddy/public
+
+Change your directory by executing
+    cd ~vhosts/officehourbuddy/public
+
+Ensure these are world-executable by executing 
+    chmod a+x css fonts img js
+    chmod a+r css/* fonts/* img/* js/*
+
+We need to associate the appliance's own IP address with officehourbuddy so that it "resolves" via DNS to it. Rather than set up
+a whole DNS server to do that, we can actually edit a file called hosts in a directory called etc. Let's do that.
+
+In a terminal window, execute
+    sudo gedit /etc/hosts
+Carefully add this line at the bottom of that file, which will associate officehourbuddy with the appliance's "loopback" address.
+    127.0.0.1 officehourbuddy
+Then save the file and quit. 
+
+Head over to http://officehourbuddy/phpmyadmin using Chrome inside of the appliance. Log in as John Harvard if prompted (with 
+username of jharvard and a password of crimson). 
+
+Open officehourbuddy.sql which is contained within the hudsbook folder. Highlight it all, copy, then return to phpMyAdmin.
+Click phpMyAdmin's SQL tab, and paste everything you copied into that page's big text box and click Go. A greenish 
+banner will appear indicating success. You should now see the link to a database called officehourbuddy in phpMyAdmin's top-left 
+corner.
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Okay, good work! Now that you've set up the necessary components, it's time to give the website a look!
+
+Visit http://officehourbuddy/ in your browser. You should be taken to a beautifully designed page with our logo and a log in button.
+
+Click on the button, and you'll be directed to the oh so familiar Harvard University Login Page. Log in with either your HUID and password,
+your @college email address and password, or if you're a faculty member, your @fas email address and password.
+
+If this is your first time logging in, you'll arrive at a page after you log in that contains two buttons, Faculty and Student. Click on
+the button that applies to you, and you'll be redirected accordingly. On subsequent log ins, the website will remember who you are, so you'll
+never see this page again. How incredible!
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+*IF YOU'RE A FACULTY MEMBER*
+
+After clicking Faculty, you should arrive at the homepage, which is a list of information about your office hours that you must input.
+
+Input in your information and click submit, and your new office hour information should appear for you on the screen!
+
+If you'd like to edit your office hours, then click on "Edit Hours" which will take you back to the same information input page.
+
+If you'd like to add hours, then also click "Edit Hours," but once you input a different day, your new homepage will display all of your hours,
+essentially adding the hours to your existing list.
+
+Hate your hours? Then click "Delete Hours" and POOF! Your hours are gone. Feel free to input new hours if you'd like.
+
+*NOTE* If you'd like to doubly register as a student (for all you overachieving student-TF's), then click on the link "Register as
+Student" and you'll be taken to the student homepage. If you'd like to view your office hours as a doubly registered student-TF,
+click "View Office Hours" *NOTE*
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+*IF YOU'RE A STUDENT*
+
+After clicking student, you should arrive at your homepage. If this is your first time, then nothing should appear but a faculty search
+box.
+
+Type in the name of your professor and voila! A sticky note should be "stuck" to your homepage with the information of your
+TF's or professor's office hours. If you'd like to search for another TF click the link "Search for TF." Slowly, you'll build up your
+wall of colorful sticky note office hours!!
+
+From now on, once you log in to Office Hour Buddy, you'll be greeted by your personalized wall of office hours!
+
+*NOTE* If you'd like to doubly register as a faculty member (for all you overachieving student-TF's), then click on the link "Register as
+Faculty" and you'll be taken to the faculty homepage. If you'd like to view your office hours as a doubly registered student-TF,
+click "View Office Hours" *NOTE*
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+Whenever you're done, make sure to log out!!
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+Now it'll be easy to schedule your weeks around your classes' office hours:) All you have to
+do is log in to Office Hour Buddy!!!!!!!

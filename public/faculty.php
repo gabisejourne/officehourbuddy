@@ -14,6 +14,7 @@
         
         else
         {
+            // find all registered office hours of current user
             $rows = query("SELECT * FROM faculty WHERE fullname = ?", $_SESSION["user"]["fullname"]);
         
             if ($rows == false)
@@ -44,7 +45,8 @@
                 $_SESSION["user"]["fullname"] = $_POST["fullname"];
             }
         }
-
+        
+        // find all updated office hours of current user
         $rows = query("SELECT * FROM faculty WHERE fullname = ?", $_SESSION["user"]["fullname"]);
     
         if ($rows == false)
