@@ -31,6 +31,7 @@
             }
         }
 
+/*
         $rows = query("SELECT * FROM students WHERE fullname = ?", $_SESSION["user"]["fullname"]);
     
         if ($rows == false)
@@ -38,7 +39,7 @@
             // update users              
             $result = query("INSERT INTO students (identity, fullname) VALUES(?, ?)", $_SESSION["user"]["identity"], $_SESSION["user"]["fullname"]);
         }     
-
+*/
             
         // redirect to search
         redirect("search.php");

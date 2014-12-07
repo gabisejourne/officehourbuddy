@@ -1,5 +1,6 @@
 <ul>
     <li><?= htmlspecialchars($faculty["fullname"]) ?></li>
+    <li><?= htmlspecialchars($faculty["course"]) ?></li>
     <li><?= htmlspecialchars($faculty["day"]) ?></li>
     <strong>
     <li><?= htmlspecialchars($faculty["start"]) ?></li> 

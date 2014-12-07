@@ -29,10 +29,9 @@
 
         else
         { 
-            
-            // update database to show purchased stocks
-            $result = query("INSERT INTO faculty (fullname, day, start, end) 
-            VALUES(?, ?, ?, ?) ON DUPLICATE KEY UPDATE day = VALUES(day), start = VALUES(start), end = VALUES(end)", $_SESSION["user"]["fullname"], $_POST["day"], $_POST["start"], $_POST["end"]);                     
+            // insert staff member's office hours, update if time change for given course
+            $result = query("INSERT INTO faculty (identity, fullname, course, day, start, end, location) 
+            VALUES(?, ?, ?, ?, ?, ?, ?) ON DUPLICATE KEY UPDATE day = VALUES(day), start = VALUES(start), end = VALUES(end), location = VALUES(location)", $_SESSION["user"]["identity"], $_SESSION["user"]["fullname"], $_POST["course"], $_POST["day"], $_POST["start"], $_POST["end"], $_POST["location"]);                     
 
             if ($result === false)
             {
@@ -40,8 +39,9 @@
             }
         } 
         
-        // redirect to index
-        redirect("index.php");     
+        // render hours report
+        $faculty = query("SELECT * FROM faculty WHERE fullname = ?", $_SESSION["user"]["fullname"]);
+        render("hours.php", ["faculty" => $faculty[0], "title" => "Your Hours"]);
     }
       
     

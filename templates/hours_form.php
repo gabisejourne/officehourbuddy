@@ -1,6 +1,9 @@
 <form action="hours.php" method="post">
     <fieldset>
         <div class="form-group">
+            <input autofocus class="form-control" name="course" placeholder="Course" type="text"/>
+        </div>
+        <div class="form-group">
             <select class="form-control" name="day">
                 <option value>Select day</option>
                 <option value= "Sunday">Sunday</option>
@@ -17,6 +20,9 @@
         </div>
         <div class="form-group">
             <input autofocus class="form-control" name="end" placeholder="hh:mm" type="text"/>
+        </div>
+        <div class="form-group">
+            <input autofocus class="form-control" name="location" placeholder="Location" type="text"/>
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-default">Submit</button>

@@ -19,19 +19,38 @@
                 render("student_faculty.html");
             }
             
-            // if user is student AND faculty member
-            else if (count($students) == 1 && count($faculty) == 1)
-            {
-                render("portfolio.php");
-            }
-            
             // if user is student
-            else if (count($students) == 1 && $faculty == false)
+            else if ($students != false)
             {
-                render("portfolio.php");
+                // get user's portfolio
+                $rows = query("SELECT * FROM students WHERE identity = ?", $_SESSION["user"]["identity"]);
+                if ($rows === false)
+                {
+                    apologize("Can't find your portfolio.");
+                }
+
+
+                // add saved faculty members to portfolio
+                $positions = [];
+                foreach ($rows as $row)
+                {
+                    $faculty = query("SELECT * FROM faculty WHERE fullname = ? AND course = ?", $row["faculty"], $row["course"]);
+                    $positions[] = [
+                        "faculty" => $faculty[0]["fullname"],
+                        "course" => $faculty[0]["course"],
+                        "day" => $faculty[0]["day"],
+                        "start" => $faculty[0]["start"],
+                        "end" => $faculty[0]["end"]
+                    ];
+                }
+
+                // render portfolio
+                render("portfolio.php", ["positions" => $positions, "title" => "Portfolio"]);
+             
             }
+
             
-            else if (count($faculty) == 1 && $students == false)
+            else if ($faculty != false && $students == false)
             {
                 // look up faculty member
                 $faculty = query("SELECT * FROM faculty WHERE fullname = ?", $_SESSION["user"]["fullname"]);

@@ -7,7 +7,7 @@
         <link href="/css/bootstrap.min.css" rel="stylesheet"/>
         <link href="/css/bootstrap-theme.min.css" rel="stylesheet"/>
         <link href="/css/styles.css" rel="stylesheet"/>
-        <link href="http://fonts.googleapis.com/css?family=Reenie+Beanie:regular" rel="stylesheet" type="text/css">
+        <link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
 
         <?php if (isset($title)): ?>
             <title>Office Hour Buddy: <?= htmlspecialchars($title) ?></title>

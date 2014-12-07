@@ -15,13 +15,13 @@
     {
         
         // validate submission
-        if (empty($_POST["name"]))
+        if (empty($_POST["fullname"]))
         {
             apologize("You must provide a name.");
         }
 
         // look up faculty member
-        $faculty = query("SELECT * FROM faculty WHERE fullname = ?", $_POST["name"]);
+        $faculty = query("SELECT * FROM faculty WHERE fullname = ?", $_POST["fullname"]);
         
         if ($faculty === false)
         {
@@ -31,7 +31,7 @@
         else
         {
             // render search
-            render("report.php", ["faculty" => $faculty[0], "title" => "Office Hours"]);
+            render("add_form.php", ["faculty" => $faculty[0], "title" => "Office Hours"]);
         }
     }
 
